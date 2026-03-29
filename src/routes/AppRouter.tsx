@@ -1,5 +1,6 @@
 import { Outlet, createBrowserRouter } from "react-router-dom";
 import Layout from "../components/layout";
+import ErrorPage from "../pages/ErrorPage";
 import {
   Page,
   DashboardPage,
@@ -16,6 +17,7 @@ export const router = createBrowserRouter([
         <Outlet />
       </Layout>
     ),
+    errorElement: <ErrorPage />,
     children: [
       {
         index: true,

@@ -1,10 +1,11 @@
+import LoadingPage from '@/pages/LoadingPage';
 import { Suspense, lazy, type ElementType } from 'react';
 
 // ----------------------------------------------------------------------
 
 const Loadable = (Component: ElementType) => (props: any) =>
     (
-        <Suspense fallback={<div>Loading...</div>}>
+        <Suspense fallback={<LoadingPage />}>
             <Component {...props} />
         </Suspense>
     );
