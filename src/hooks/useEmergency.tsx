@@ -1,4 +1,4 @@
-import { useFlight } from "./useFlight";
+import { useFlight, type OpenSkyResponse, type OpenSkyState } from "./useFlight";
 
 export type Severity = "critical" | "high" | "medium" | "low" | "info";
 
@@ -15,6 +15,8 @@ export interface EmergencyFlight {
   longitude: number | null;
   altitude: number | null;
   squawk: string | null;
+  velocity: number | null;
+  onGround: boolean;
   emergencyLabel: EmergencySquawkInfo;
 }
 
@@ -40,18 +42,20 @@ export const EMERGENCY_SQUAWKS: Record<string, EmergencySquawkInfo> = {
 
 export const useEmergencyFlights = () => {
   return useFlight({
-    select: (data: { states: any[][] }) =>
+    select: (data: OpenSkyResponse) =>
       data.states
-        ?.filter((s) => s[14] && EMERGENCY_SQUAWKS[s[14]])
-        .map((s): EmergencyFlight => ({
+        ?.filter((s: OpenSkyState) => s[14] && EMERGENCY_SQUAWKS[s[14]])
+        .map((s: OpenSkyState): EmergencyFlight => ({
           icao24: s[0],
           callsign: s[1]?.trim() || "—",
           country: s[2],
           latitude: s[6],
           longitude: s[5],
           altitude: s[7],
+          velocity: s[9],
+          onGround: s[8],
           squawk: s[14],
-          emergencyLabel: EMERGENCY_SQUAWKS[s[14]],
+          emergencyLabel: EMERGENCY_SQUAWKS[s[14]!],
         })) || [],
   });
 };

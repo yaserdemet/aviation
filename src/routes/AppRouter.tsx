@@ -2,17 +2,17 @@ import { Outlet, createBrowserRouter } from "react-router-dom";
 import Layout from "../components/layout";
 import {
   Page,
-  PlaygroundPage,
-  HistoryPage,
-  StarredPage,
-  SettingsPage,
+  DashboardPage,
+  LiveTrafficPage,
+  EmergencyPage,
+  StatisticsPage,
 } from "./elements";
 
 export const router = createBrowserRouter([
   {
     path: "/",
     element: (
-      <Layout pageTitle="Home">
+      <Layout pageTitle="Radar Merkezi">
         <Outlet />
       </Layout>
     ),
@@ -22,20 +22,20 @@ export const router = createBrowserRouter([
         element: <Page />,
       },
       {
-        path: "playground",
-        element: <PlaygroundPage />,
+        path: "dashboard",
+        element: <DashboardPage />,
       },
       {
-        path: "history",
-        element: <HistoryPage />,
+        path: "live-traffic",
+        element: <LiveTrafficPage />,
       },
       {
-        path: "starred",
-        element: <StarredPage />,
+        path: "emergency",
+        element: <EmergencyPage />,
       },
       {
-        path: "settings",
-        element: <SettingsPage />,
+        path: "statistics",
+        element: <StatisticsPage />,
       },
     ],
   },

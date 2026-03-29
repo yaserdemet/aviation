@@ -53,27 +53,27 @@ const data = {
   ],
   navMain: [
     {
-      title: "Playground",
-      url: "/playground",
+      title: "Radar Kontrol",
+      url: "/dashboard",
       icon: SquareTerminal,
       isActive: true,
       items: [
         {
-          title: "History",
-          url: "/history",
+          title: "Canlı Trafik",
+          url: "/live-traffic",
         },
         {
-          title: "Starred",
-          url: "/starred",
+          title: "Acil Durum (Squawk)",
+          url: "/emergency",
         },
         {
-          title: "Settings",
-          url: "/settings",
+          title: "Radar İstatistikleri",
+          url: "/statistics",
         },
       ],
     },
     {
-      title: "Models",
+      title: "Analiz & Araçlar",
       url: "#",
       icon: Bot,
       items: [

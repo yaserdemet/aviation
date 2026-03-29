@@ -11,8 +11,8 @@ const Loadable = (Component: ElementType) => (props: any) =>
 
 // ----------------------------------------------------------------------
 
-export const Page = Loadable(lazy(() => import('../pages/page1')));
-export const PlaygroundPage = Loadable(lazy(() => import('../pages/playground')));
-export const HistoryPage = Loadable(lazy(() => import('../pages/history')));
-export const StarredPage = Loadable(lazy(() => import('../pages/starred')));
-export const SettingsPage = Loadable(lazy(() => import('../pages/settings')));
+export const Page = Loadable(lazy(() => import('../pages/Home')));
+export const DashboardPage = Loadable(lazy(() => import('../pages/Dashboard')));
+export const LiveTrafficPage = Loadable(lazy(() => import('../pages/LiveTraffic')));
+export const EmergencyPage = Loadable(lazy(() => import('../pages/EmergencyPage')));
+export const StatisticsPage = Loadable(lazy(() => import('../pages/Charts')));
