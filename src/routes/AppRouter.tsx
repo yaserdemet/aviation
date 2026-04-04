@@ -12,6 +12,7 @@ import {
   Form92Page,
   Form93Page,
   AirportsPage,
+  SearchAirportPage,
 } from "./elements";
 
 export const router = createBrowserRouter([
@@ -63,6 +64,10 @@ export const router = createBrowserRouter([
       {
         path: "airports",
         element: <AirportsPage />,
+      },
+      {
+        path: "search-airport",
+        element: <SearchAirportPage />,
       },
     ],
   },

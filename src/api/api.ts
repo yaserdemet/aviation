@@ -96,3 +96,13 @@ export const getFlightofAerodome = async (
   }
 };
 
+export const getNearAirport = async (codeType : "iata" | "icao" | "local" = "icao", codeFrom : string, codeTo : string ) => {
+  try{  
+    const response = await airportApi.get(`/airports/${codeType}/${codeFrom}/distance-time/${codeTo}`);
+    return response?.data;
+  } catch (error) {
+    console.error("Error fetching nearby airports:", error);
+    throw error;
+  }
+}
+

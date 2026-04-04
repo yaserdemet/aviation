@@ -1,24 +1,32 @@
-import LoadingPage from '@/pages/LoadingPage';
-import { Suspense, lazy, type ElementType } from 'react';
+import LoadingPage from "@/pages/LoadingPage";
+import { Suspense, lazy, type ElementType } from "react";
 
 // ----------------------------------------------------------------------
 
-const Loadable = (Component: ElementType) => (props: any) =>
-    (
-        <Suspense fallback={<LoadingPage />}>
-            <Component {...props} />
-        </Suspense>
-    );
+const Loadable = (Component: ElementType) => (props: any) => (
+  <Suspense fallback={<LoadingPage />}>
+    <Component {...props} />
+  </Suspense>
+);
 
 // ----------------------------------------------------------------------
 
-export const Page = Loadable(lazy(() => import('../pages/Home')));
-export const DashboardPage = Loadable(lazy(() => import('../pages/Dashboard')));
-export const LiveTrafficPage = Loadable(lazy(() => import('../pages/LiveTraffic')));
-export const EmergencyPage = Loadable(lazy(() => import('../pages/EmergencyPage')));
-export const StatisticsPage = Loadable(lazy(() => import('../pages/Charts')));
-export const FlightMapPage = Loadable(lazy(() => import('../pages/FlightMap')));
-export const Form91Page = Loadable(lazy(() => import('../pages/Form91')));
-export const Form92Page = Loadable(lazy(() => import('../pages/Form92')));
-export const Form93Page = Loadable(lazy(() => import('../pages/Form93')));
-export const AirportsPage = Loadable(lazy(() => import('../pages/AirportsPage')));
+export const Page = Loadable(lazy(() => import("../pages/Home")));
+export const DashboardPage = Loadable(lazy(() => import("../pages/Dashboard")));
+export const LiveTrafficPage = Loadable(
+  lazy(() => import("../pages/LiveTraffic")),
+);
+export const EmergencyPage = Loadable(
+  lazy(() => import("../pages/EmergencyPage")),
+);
+export const StatisticsPage = Loadable(lazy(() => import("../pages/Charts")));
+export const FlightMapPage = Loadable(lazy(() => import("../pages/FlightMap")));
+export const Form91Page = Loadable(lazy(() => import("../pages/Form91")));
+export const Form92Page = Loadable(lazy(() => import("../pages/Form92")));
+export const Form93Page = Loadable(lazy(() => import("../pages/Form93")));
+export const AirportsPage = Loadable(
+  lazy(() => import("../pages/AirportsPage")),
+);
+export const SearchAirportPage = Loadable(
+  lazy(() => import("../pages/SearchAirportPage")),
+);
