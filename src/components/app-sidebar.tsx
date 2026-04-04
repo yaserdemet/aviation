@@ -74,6 +74,10 @@ const data = {
           title: "Uçuş Haritası",
           url: "/flight-map",
         },
+        {
+          title: "Havaalanları",
+          url: "/airports",
+        },
       ],
     },
     {

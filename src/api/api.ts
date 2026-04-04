@@ -51,3 +51,15 @@ export const skyApi = {
     return res.data;
   },
 };
+
+import airportApi from "@/lib/axiosAirport";
+
+export const getAirportByCode = async (codeType: "iata" | "icao" | "local", code: string) => {
+  try {
+    const res = await airportApi.get(`/airports/${codeType}/${code}`);
+    return res.data;
+  } catch (error) {
+    console.error("Error fetching airport data:", error);
+    throw error;
+  }
+};

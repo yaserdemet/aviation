@@ -21,3 +21,4 @@ export const FlightMapPage = Loadable(lazy(() => import('../pages/FlightMap')));
 export const Form91Page = Loadable(lazy(() => import('../pages/Form91')));
 export const Form92Page = Loadable(lazy(() => import('../pages/Form92')));
 export const Form93Page = Loadable(lazy(() => import('../pages/Form93')));
+export const AirportsPage = Loadable(lazy(() => import('../pages/AirportsPage')));

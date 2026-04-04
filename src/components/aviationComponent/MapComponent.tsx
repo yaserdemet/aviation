@@ -14,6 +14,7 @@ import type { LatLngExpression } from "leaflet"
 import { useFlight } from "@/hooks/useFlight";
 import { Plane } from "lucide-react";
 import LoadingPage from "@/pages/LoadingPage";
+import { mapUrlForBlackEditon } from "@/api/mapUrl";
 
 const DEFAULT_CENTER: [number, number] = [39.9255, 32.8663]; // Türkiye merkezli varsayılan konum
 
@@ -66,8 +67,8 @@ const MapComponent = () => {
     <div className="relative w-full h-[600px] border rounded-xl overflow-hidden shadow-sm">
       <Map center={DEFAULT_CENTER} zoom={5}>
         <MapTileLayer
-          url="https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}.png"
-          attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/attributions">CARTO</a>'
+          url={mapUrlForBlackEditon.url}
+          attribution={mapUrlForBlackEditon.attribution}
         />
         <MapLayers defaultLayerGroups={PLACES.map((place) => place.name)}>
           <MapLayersControl layerGroupsLabel="Safari" />
