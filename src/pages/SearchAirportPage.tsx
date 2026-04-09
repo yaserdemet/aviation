@@ -3,8 +3,8 @@ import { useQuery } from "@tanstack/react-query";
 import { getNearAirport } from "@/api/api";
 import { useForm } from "react-hook-form";
 import type { LatLngExpression } from "leaflet";
-import { SearchForm, FlightMap, FlightDetails } from "@/components/searchAirport";
-import type { FormInputs, NearAirportResponse, CityMarker } from "@/components/searchAirport/types";
+import { SearchForm, FlightMap, FlightDetails } from "@/components/searchAirportRoute";
+import type { FormInputs, NearAirportResponse, CityMarker } from "@/components/searchAirportRoute/types";
 
 export default function SearchAirportPage() {
   const {

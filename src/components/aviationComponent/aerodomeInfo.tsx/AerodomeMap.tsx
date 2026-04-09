@@ -10,12 +10,12 @@ import type { LatLngExpression } from "leaflet";
 import { mapUrlForBlackEditon } from "@/api/mapUrl";
 import { useQuery } from "@tanstack/react-query";
 import { getRunwayInfo } from "@/api/api";
-const AerodomeMap = ({ lat, lon }: { lat: number; lon: number }) => {
+const AerodomeMap = ({ lat, lon, code }: { lat: number; lon: number, code: string }) => {
   const TORONTO_COORDINATES = [lat, lon] satisfies LatLngExpression;
 
   const { data, isLoading, isError } = useQuery({
     queryKey: ["runway"],
-    queryFn: () => getRunwayInfo("icao", "ltau"),
+    queryFn: () => getRunwayInfo("icao", code),
     enabled: !!lat && !!lon, 
   });
 
@@ -44,14 +44,14 @@ const AerodomeMap = ({ lat, lon }: { lat: number; lon: number }) => {
 
             {isLoading && (
               <div className="flex justify-center items-center py-4">
-                <span className="text-sm text-slate-500 animate-pulse">
+                <span className="text-sm text-muted-foreground animate-pulse">
                   Veriler yükleniyor...
                 </span>
               </div>
             )}
 
             {isError && (
-              <div className="bg-red-50 text-red-600 text-sm p-3 rounded-md border border-red-100">
+              <div className="text-red-600 text-sm p-3 rounded-md border border-red-100">
                 Pist bilgileri alınırken bir hata oluştu.
               </div>
             )}

@@ -111,3 +111,14 @@ export const getNearAirport = async (
     throw error;
   }
 };
+
+export const getFlightsOfAirport = async (  codeType : "iata" | "icao" | "local" = "icao", code : string) => {
+  try {
+    const data = await airportApi.get(`/flights/airports/${codeType}/${code}`)
+    if(!data?.data) throw new Error("Havaalanı bulunamadı")
+    return data?.data
+  } catch (error) {
+    console.error("Error fetching airport flights:", error);
+    throw error
+  }
+}
