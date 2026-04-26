@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const TOKEN_URL = "/auth-proxy/auth/realms/opensky-network/protocol/openid-connect/token";
+const TOKEN_URL = "https://auth.opensky-network.org/auth/realms/opensky-network/protocol/openid-connect/token";
 
 let accessToken: any = null;
 let tokenExpiry: any = null;
@@ -28,7 +28,7 @@ const getToken = async () => {
 };
 
 const api = axios.create({
-  baseURL: "/api-proxy",
+  baseURL: "https://opensky-network.org/api",
   timeout: 15000,
 });
 
